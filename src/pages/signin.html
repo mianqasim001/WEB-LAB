@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | EduLearn</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ✅ Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048968.png" class="h-8" alt="Logo">
+        <span class="font-bold text-xl text-purple-600">EduLearn</span>
+      </a>
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-purple-600 font-medium">Home</a>
+        <a href="about.html" class="hover:text-purple-600 font-medium">About</a>
+        <a href="contact.html" class="hover:text-purple-600 font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Hero Header -->
+  <header class="bg-purple-600 text-white text-center py-12">
+    <h1 class="text-4xl font-bold mb-2">Welcome Back</h1>
+    <p class="max-w-xl mx-auto text-purple-100">Sign in to continue your learning journey with EduLearn.</p>
+  </header>
+
+  <!-- ✅ Sign In Form -->
+  <section class="flex justify-center items-center py-16 px-4">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-center text-purple-600 mb-6">Sign In</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block mb-1 font-semibold">Email</label>
+          <div class="flex items-center border border-gray-300 rounded px-3 py-2 focus-within:ring-2 focus-within:ring-purple-200">
+            <svg class="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0H8m0 0l8-8m-8 8l8 8" />
+            </svg>
+            <input type="email" class="w-full focus:outline-none" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="block mb-1 font-semibold">Password</label>
+          <div class="flex items-center border border-gray-300 rounded px-3 py-2 focus-within:ring-2 focus-within:ring-purple-200">
+            <svg class="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3v4a2 2 0 002 2h2a2 2 0 002-2v-4z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7V5a3 3 0 00-6 0v2" />
+            </svg>
+            <input type="password" class="w-full focus:outline-none" placeholder="••••••••">
+          </div>
+        </div>
+        <button class="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition">Sign In</button>
+      </form>
+      <p class="text-center mt-4 text-sm">Don’t have an account? <a href="signup.html" class="text-purple-600 hover:underline">Sign up</a></p>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>© 2025 EduLearn. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
