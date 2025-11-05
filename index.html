@@ -1,167 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduLearn | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLearn | Student Manager</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
   <!-- ✅ Navbar -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-      <a href="./index.html" class="flex items-center space-x-2">
+      <a href="#" class="flex items-center space-x-2">
         <img src="https://cdn-icons-png.flaticon.com/512/1048/1048968.png" class="h-8" alt="Logo">
         <span class="font-bold text-xl text-purple-600">EduLearn</span>
       </a>
       <div class="hidden md:flex space-x-6">
-        <a href="./index.html" class="hover:text-purple-600 font-medium">Home</a>
-        <a href="./src/pages/about.html" class="hover:text-purple-600 font-medium">About</a>
-        <a href="./src/pages/contact.html" class="hover:text-purple-600 font-medium">Contact</a>
+        <a href="#" class="hover:text-purple-600 font-medium">Home</a>
+        <a href="#" class="hover:text-purple-600 font-medium">About</a>
+        <a href="#" class="hover:text-purple-600 font-medium">Contact</a>
       </div>
-      <div class="hidden md:flex space-x-4">
-        <a href="./src/pages/signup.html" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Sign Up</a>
-        <a href="./src/pages/signin.html" class="px-4 py-2 border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50">Sign In</a>
-      </div>
-      <button id="menu-btn" class="md:hidden flex items-center">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
-      <a href="./index.html" class="block">Home</a>
-      <a href="./src/pages/about.html" class="block">About</a>
-      <a href="./src/pages/contact.html" class="block">Contact</a>
-      <a href="./src/pages/signup.html" class="block text-purple-600">Sign Up</a>
-      <a href="./src/pages/signin.html" class="block">Sign In</a>
     </div>
   </nav>
 
-  <!-- ✅ Hero Section -->
-  <section class="bg-purple-600 text-white py-28 md:py-36 text-center">
-    <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Welcome to EduLearn</h1>
-      <p class="text-lg md:text-xl mb-8 leading-relaxed">
-        Your one-stop platform for online education, skill-building, and personal growth.
-      </p>
-      <a href="./src/pages/signup.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
-        Get Started
-      </a>
-    </div>
+  <!-- 🟣 Hero Section -->
+  <section class="bg-purple-600 text-white py-12 text-center">
+    <h1 class="text-4xl font-bold">JavaScript Array of Objects (CRUD)</h1>
+    <p class="text-lg mt-2">Manage students dynamically using Create, Read, Update, Delete, and Search.</p>
   </section>
 
-  <!-- ✅ Highlights Section -->
-  <section class="max-w-7xl mx-auto py-20 grid md:grid-cols-3 gap-10 px-4">
-    <div class="bg-white p-8 rounded-lg shadow text-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="h-20 mx-auto mb-4">
-      <h3 class="font-bold text-xl text-purple-600 mb-2">Expert Instructors</h3>
-      <p>Learn from experienced and certified teachers from all over the world.</p>
+  <!-- 🟣 Controls Section -->
+  <section class="max-w-5xl mx-auto py-10 px-4">
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-700">Add New Student</h2>
+      <form id="studentForm" class="grid md:grid-cols-5 gap-4 bg-white p-6 rounded-lg shadow">
+        <input id="name" class="border p-2 rounded" placeholder="Name" required>
+        <input id="age" type="number" class="border p-2 rounded" placeholder="Age" required>
+        <input id="grade" class="border p-2 rounded" placeholder="Grade (A/B/C)" required>
+        <input id="course" class="border p-2 rounded" placeholder="Course" required>
+        <button class="bg-purple-600 text-white rounded px-4 py-2 hover:bg-purple-700">Add</button>
+      </form>
     </div>
-    <div class="bg-white p-8 rounded-lg shadow text-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/4072/4072189.png" class="h-20 mx-auto mb-4">
-      <h3 class="font-bold text-xl text-purple-600 mb-2">Interactive Learning</h3>
-      <p>Engage with lessons through modern, fun, and effective methods.</p>
+
+    <!-- 🟣 Search and Filters -->
+    <div class="mb-8 grid md:grid-cols-6 gap-4">
+      <input id="searchInput" type="text" class="col-span-2 border p-2 rounded" placeholder="Search by name...">
+      <select id="filterGrade" class="border p-2 rounded">
+        <option value="">Filter by Grade</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <select id="filterCourse" class="border p-2 rounded">
+        <option value="">Filter by Course</option>
+        <option value="Web Development">Web Development</option>
+        <option value="AI">AI</option>
+        <option value="Networking">Networking</option>
+      </select>
+      <select id="filterAge" class="border p-2 rounded">
+        <option value="">Filter by Age</option>
+        <option value="under20">Under 20</option>
+        <option value="20to22">20-22</option>
+        <option value="above22">Above 22</option>
+      </select>
+      <button id="resetFilters" class="bg-gray-300 text-black rounded px-4 py-2 hover:bg-gray-400">Reset</button>
     </div>
-    <div class="bg-white p-8 rounded-lg shadow text-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/3076/3076988.png" class="h-20 mx-auto mb-4">
-      <h3 class="font-bold text-xl text-purple-600 mb-2">Global Community</h3>
-      <p>Join a worldwide network of learners and educators.</p>
-    </div>
+
+    <!-- 🟣 Cards Container -->
+    <div id="cardContainer" class="grid md:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- 🟣 Features Section -->
-  <section class="bg-white py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-purple-600 mb-10">Why Choose EduLearn?</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" class="h-14 mx-auto mb-3">
-          <h4 class="font-semibold mb-2">Flexible Schedule</h4>
-          <p class="text-sm text-gray-600">Learn at your own pace, anytime and anywhere.</p>
-        </div>
-        <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" class="h-14 mx-auto mb-3">
-          <h4 class="font-semibold mb-2">Certificates</h4>
-          <p class="text-sm text-gray-600">Earn recognized certificates to boost your career.</p>
-        </div>
-        <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" class="h-14 mx-auto mb-3">
-          <h4 class="font-semibold mb-2">Live Sessions</h4>
-          <p class="text-sm text-gray-600">Attend interactive live classes with experts.</p>
-        </div>
-        <div>
-          <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" class="h-14 mx-auto mb-3">
-          <h4 class="font-semibold mb-2">Affordable</h4>
-          <p class="text-sm text-gray-600">Get premium quality education at affordable rates.</p>
-        </div>
+  <!-- 🟣 Edit Modal -->
+  <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg w-96 shadow-lg">
+      <h3 class="text-xl font-semibold mb-4 text-purple-700">Edit Student</h3>
+      <input id="editName" class="border p-2 rounded w-full mb-3" placeholder="Name">
+      <input id="editAge" type="number" class="border p-2 rounded w-full mb-3" placeholder="Age">
+      <input id="editGrade" class="border p-2 rounded w-full mb-3" placeholder="Grade">
+      <input id="editCourse" class="border p-2 rounded w-full mb-3" placeholder="Course">
+      <div class="flex justify-between">
+        <button id="updateBtn" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Update</button>
+        <button id="cancelBtn" class="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400">Cancel</button>
       </div>
     </div>
-  </section>
-
-  <!-- 🟣 Testimonials Section -->
-  <section class="bg-purple-50 py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-purple-600 mb-12">What Our Students Say</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="italic mb-4">“EduLearn transformed the way I study. The instructors are amazing!”</p>
-          <h4 class="font-semibold text-purple-600">— Sarah K.</h4>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="italic mb-4">“I love the flexibility and quality content. Highly recommended.”</p>
-          <h4 class="font-semibold text-purple-600">— Ali R.</h4>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="italic mb-4">“The platform helped me land my first job. Thank you EduLearn!”</p>
-          <h4 class="font-semibold text-purple-600">— Maria L.</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🟣 CTA Section -->
-  <section class="bg-purple-600 text-white text-center py-20">
-    <h2 class="text-4xl font-bold mb-4">Start Your Learning Journey Today</h2>
-    <p class="text-lg mb-8">Join thousands of learners and grow your skills with EduLearn.</p>
-    <a href="./src/pages/signup.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
-      Sign Up Now
-    </a>
-  </section>
+  </div>
 
   <!-- ✅ Footer -->
-  <footer class="bg-gray-900 text-gray-300 py-10 mt-8">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div>
-        <h3 class="text-xl font-bold mb-2 text-white">EduLearn</h3>
-        <p>Your trusted learning partner.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2 text-white">Quick Links</h4>
-        <ul class="space-y-1">
-          <li><a href="./index.html" class="hover:underline">Home</a></li>
-          <li><a href="./src/pages/about.html" class="hover:underline">About</a></li>
-          <li><a href="./src/pages/contact.html" class="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2 text-white">Follow Us</h4>
-        <div class="flex space-x-4">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="h-6" alt=""></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="h-6" alt=""></a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center text-sm text-gray-500 mt-4">© 2025 EduLearn. All rights reserved.</div>
+  <footer class="bg-gray-900 text-gray-300 py-6 text-center mt-10">
+    <p>© 2025 EduLearn. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('menu-btn').addEventListener('click',()=>{
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
+  <!-- ✅ JS -->
+  <script src="./src/pages/home.js"></script>
 </body>
+
 </html>
